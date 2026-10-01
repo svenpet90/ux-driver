@@ -1,0 +1,41 @@
+{
+  "name": "@svenpetersen/ux-driver",
+  "description": "Product tours with driver.js for Symfony UX",
+  "license": "MIT",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/controller.js",
+  "symfony": {
+    "controllers": {
+      "tour": {
+        "main": "dist/controller.js",
+        "webpackMode": "eager",
+        "fetch": "lazy",
+        "enabled": true,
+        "autoimport": {
+          "driver.js/dist/driver.css": true
+        }
+      }
+    },
+    "importmap": {
+      "@hotwired/stimulus": "^3.0.0",
+      "driver.js": "^1.8.0",
+      "driver.js/dist/driver.css": "^1.8.0"
+    }
+  },
+  "peerDependencies": {
+    "@hotwired/stimulus": "^3.0.0",
+    "driver.js": "^1.8.0"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@hotwired/stimulus": "^3.0.0",
+    "driver.js": "^1.8.0",
+    "jsdom": "^26.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^3.2.0"
+  }
+}
