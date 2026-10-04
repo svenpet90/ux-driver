@@ -1,0 +1,9 @@
+# Kept out of the archives Composer installs from (dist); the repository still has them.
+/.gitattributes export-ignore
+/.github export-ignore
+/.gitignore export-ignore
+/assets/test export-ignore
+/assets/vitest.config.ts export-ignore
+/phpstan.dist.neon export-ignore
+/phpunit.xml.dist export-ignore
+/tests export-ignore

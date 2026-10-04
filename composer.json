@@ -2,7 +2,6 @@
     "name": "svenpetersen/ux-driver",
     "description": "Product tours with driver.js for Symfony UX, with the seen state stored per user",
     "type": "symfony-bundle",
-    "version": "0.1.0",
     "license": "MIT",
     "keywords": [
         "symfony-ux",
