@@ -8,8 +8,8 @@ use SvenPetersen\UX\Driver\Model\Tour;
 
 /**
  * Provides one tour. Implementations are tagged automatically (the bundle registers the
- * interface for autoconfiguration) and looked up by `getTourId()` — a template then only needs
- * `ux_driver_tour('<id>')`.
+ * interface for autoconfiguration) and looked up by `getTourId()`, read once at compile time
+ * (DependencyInjection\TourIdIndexPass) — a template then only needs `ux_driver_tour('<id>')`.
  */
 interface TourProviderInterface
 {

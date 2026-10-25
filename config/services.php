@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
 use SvenPetersen\UX\Driver\Action\MarkTourSeenAction;
+use SvenPetersen\UX\Driver\DependencyInjection\TourIdIndexPass;
 use SvenPetersen\UX\Driver\Persistence\AsTourViewManager;
 use SvenPetersen\UX\Driver\Persistence\TourViewStore;
 use SvenPetersen\UX\Driver\Provider\TourProviderInterface;
@@ -15,7 +16,7 @@ return static function (ContainerConfigurator $container): void {
     $container->services()
         ->set(TourRegistry::class)
             ->args([
-                tagged_locator(TourProviderInterface::TAG, defaultIndexMethod: 'getTourId'),
+                tagged_locator(TourProviderInterface::TAG, indexAttribute: TourIdIndexPass::INDEX_ATTRIBUTE),
             ])
 
         ->set(TourViewStore::class)

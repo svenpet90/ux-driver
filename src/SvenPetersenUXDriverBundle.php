@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace SvenPetersen\UX\Driver;
 
+use SvenPetersen\UX\Driver\DependencyInjection\TourIdIndexPass;
 use SvenPetersen\UX\Driver\Persistence\AsTourViewManager;
 use SvenPetersen\UX\Driver\Provider\TourProviderInterface;
 use Symfony\Component\AssetMapper\AssetMapperInterface;
@@ -25,6 +26,13 @@ use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
  */
 final class SvenPetersenUXDriverBundle extends AbstractBundle
 {
+    public function build(ContainerBuilder $container): void
+    {
+        parent::build($container);
+
+        $container->addCompilerPass(new TourIdIndexPass());
+    }
+
     /**
      * @param array<string, mixed> $config
      */
